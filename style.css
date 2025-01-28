@@ -1,0 +1,552 @@
+* {
+    margin: 0; /* Wala'y margin */
+    padding: 0; /* Wala'y padding */
+    font-family: 'Poppins', sans-serif; /* Ang font nga gamiton */
+    box-sizing: border-box; /* Siguradong ang width og height sa elements magapadayon sa pag-include sa border ug padding */
+}
+
+html {
+    scroll-behavior: smooth; /* Gamiton ang smooth scrolling */
+}
+
+body {
+    background: #080808; /* Itom nga background */
+    color: #fff; /* Puti nga text color */
+}
+
+#header {
+    width: 100%; /* Ang header magkuha og 100% sa width */
+    height: 100vh; /* Ang height sa header kay full viewport height */
+    background-image: url(Images/background.jpg); /* Background image sa header */
+    background-size: cover; /* Siguradong ang background mag-full coverage */
+    background-position-x: center; /* Centered ang background horizontally */
+}
+
+.container {
+    padding: 10px 10%; /* Padding sa container */
+}
+
+nav {
+    display: flex; /* Gamiton ang flexbox para sa navigation */
+    align-items: center; /* Align vertically sa center */
+    justify-content: space-between; /* Spaces evenly ang items */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.logo {
+    width: 140px; /* Fix nga width para sa logo */
+}
+
+nav ul li {
+    display: inline-block; /* Inline block display sa mga list items */
+    list-style: none; /* Wala'y bullet points */
+    margin: 10px 20px; /* Margin sa list items */
+}
+
+nav li a {
+    color: #fff; /* Puti nga text color sa links */
+    text-decoration: none; /* Wala'y underline */
+    font-size: 18px; /* Font size para sa links */
+    position: relative; /* Para sa positioning sa pseudo-element */
+}
+
+nav li a::after {
+    content: ''; /* Empty content */
+    width: 0; /* Default width */
+    height: 3px; /* Height sa underline */
+    background: #800080; /* Purple nga color sa underline */
+    position: absolute; /* Absolute positioning */
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s; /* Smooth transition */
+}
+
+nav li a:hover::after {
+    width: 100%; /* Full width sa underline kung mag-hover */
+}
+
+.header-text {
+    margin-top: 20%; /* Margin from the top */
+    font-size: 30px; /* Font size */
+}
+
+.header-text h1 {
+    font-size: 60px; /* Larger font size for h1 */
+    margin-top: 20px; /* Margin from top */
+}
+
+.header-text h1 span {
+    color: #800080; /* Color sa span tag sa h1 */
+}
+
+/*----about section----*/
+#about {
+    padding: 80px 0; /* Padding sa about section */
+    color: #fff; /* Puti nga text color */
+}
+
+.row {
+    display: flex; /* Gamiton ang flexbox para sa row */
+    justify-content: space-between; /* Space evenly between items */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.about-col-1 {
+    flex-basis: 35%; /* 35% width sa unang column */
+}
+
+.about-col-1 img {
+    width: 100%; /* Image magkuha sa tibuok width */
+    border-radius: 15px; /* Rounded corners sa image */
+}
+
+.about-col-2 {
+    flex-basis: 60%; /* 60% width sa ikaduhang column */
+}
+
+.sub-title {
+    font-size: 60px; /* Dako nga font size para sa sub-title */
+    font-weight: 600; /* Medium weight */
+    color: #fff; /* Puti nga text color */
+}
+
+.tab-titles {
+    display: flex; /* Flexbox para sa tab titles */
+    margin: 20px 0 40px; /* Margin sa tab titles */
+}
+
+.tab-links {
+    margin-right: 50px; /* Margin sa right */
+    font-size: 18px; /* Font size */
+    font-weight: 500; /* Medium weight */
+    cursor: pointer; /* Cursors change to pointer */
+    position: relative; /* Absolute positioning sa after pseudo-element */
+}
+
+.tab-links::after {
+    content: ''; /* Empty content for pseudo-element */
+    width: 0; /* Default width */
+    height: 3px; /* Height sa underline */
+    background: #800080; /* Purple nga color sa underline */
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s; /* Smooth transition for width */
+}
+
+.tab-links.active-link::after {
+    width: 50%; /* Half width for active link */
+}
+
+.tab-contents ul li {
+    list-style: none; /* Wala'y bullet points */
+    margin: 10px 0; /* Margin sa list items */
+}
+
+.tab-contents ul li span {
+    color: #800080; /* Red color for spans */
+    font-size: 14px; /* Font size */
+}
+
+.tab-contents {
+    display: none; /* Hidden by default */
+}
+
+.tab-contents.active-tab {
+    display: block; /* Visible kung active */
+}
+
+/*----------services section------*/
+#services {
+    padding: 30px 0; /* Padding for services section */
+}
+
+.services-list {
+    display: grid; /* Grid display for services list */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns */
+    grid-gap: 40px; /* Gap between grid items */
+    margin-top: 50px; /* Margin from the top */
+}
+
+.services-list div {
+    background: #535252; /* Dark background for services */
+    padding: 40px; /* Padding inside service items */
+    font-size: 13px; /* Font size */
+    font-weight: 300; /* Light font weight */
+    border-radius: 10px; /* Rounded corners */
+    transition: background 0.5s, transform 0.5s; /* Smooth transition for background and transform */
+}
+
+.services-list div i {
+    font-size: 50px; /* Large icon size */
+    margin-bottom: 30px; /* Margin below icon */
+}
+
+.services-list div h2 {
+    font-size: 30px; /* Font size for h2 */
+    font-weight: 500; /* Medium weight */
+    margin-bottom: 15px; /* Margin below h2 */
+}
+
+.services-list div a {
+    text-decoration: none; /* No underline on link */
+    color: #fff; /* White text color */
+    font-size: 12px; /* Small font size */
+    margin-top: 20px; /* Margin from the top */
+    display: inline-block; /* Inline-block for link */
+}
+
+.services-list div:hover {
+    background: #800080; /* Purple background on hover */
+    transform: translateY(-10px); /* Slightly move the item upwards */
+}
+
+/*-------portfolio section------------*/
+#portfolio {
+    padding: 50px 0; /* Padding for portfolio section */
+}
+
+.work-list {
+    display: grid; /* Grid display for work items */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns */
+    grid-gap: 40px; /* Gap between grid items */
+    margin-top: 50px; /* Margin from the top */
+}
+
+.work {
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Relative positioning for layers */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.work img {
+    width: 100%; /* Image takes full width */
+    border-radius: 10px; /* Rounded corners */
+    display: block; /* Block display */
+    transition: transform 0.5s; /* Smooth transform */
+}
+
+.layer {
+    width: 100%; /* Full width */
+    height: 0%; /* Initial height is 0 */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #800080); /* Gradient background */
+    border-radius: 10px; /* Rounded corners */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden; /* Hide content outside of the layer */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Vertical stacking */
+    padding: 0 40px;
+    text-align: center; /* Center text */
+    font-size: 14px; /* Small font size */
+    transition: height 0.5s; /* Smooth height transition */
+}
+
+.layer h3 {
+    font-weight: 500; /* Medium font weight */
+    margin-bottom: 20px; /* Margin below h3 */
+}
+
+.layer a {
+    margin-top: 20px; /* Margin above the link */
+    color: #ff00ff; /* Pink link color */
+    text-decoration: none; /* No underline on link */
+    font-size: 18px; /* Font size */
+    line-height: 60px; /* Line height for better alignment */
+    background: #fff; /* White background */
+    width: 60px; /* Fixed width */
+    height: 60px; /* Fixed height */
+    border-radius: 50%; /* Circular button */
+    text-align: center; /* Center text */
+}
+
+.work:hover img {
+    transform: scale(1.1); /* Zoom image on hover */
+}
+
+.work:hover .layer {
+    height: 100%; /* Full height on hover */
+}
+
+/* Button styles */
+.btn {
+    display: block; /* Block-level button */
+    margin: 50px auto; /* Centered margin */
+    width: fit-content; /* Width based on content */
+    border: 1px solid #681060; /* Purple border */
+    padding: 14px 50px; /* Padding inside the button */
+    text-decoration: none; /* No underline on button link */
+    color: #f136c3; /* Pink text color */
+    transition: background 0.5s; /* Smooth background transition */
+}
+
+.btn:hover {
+    background: #640264; /* Darker purple background on hover */
+}
+
+/*-------form section--------*/
+.contact-right form {
+    width: 100%; /* Full width for form */
+}
+
+form input, form textarea {
+    width: 100%; /* Full width for inputs and textareas */
+    border: 0; /* No border */
+    outline: none; /* No outline */
+    background: #501650; /* Dark purple background */
+    padding: 15px; /* Padding inside inputs */
+    margin: 15px 0; /* Margin above and below inputs */
+    color: #fff; /* White text color */
+    font-size: 18px; /* Font size */
+    border-radius: 6px; /* Rounded corners */
+}
+
+form btn2 {
+    padding: 14px 60px; /* Padding for submit button */
+    font-size: 18px; /* Font size */
+    margin-top: 20px; /* Margin above button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn.btn2 {
+    display: inline-block; /* Inline-block button */
+    background: linear-gradient(90deg, #800080, #ff00ff); /* Gradient background */
+    color: #fff; /* White text color */
+    padding: 14px 30px; /* Padding inside the button */
+    font-size: 18px; /* Font size */
+    font-weight: 500; /* Medium font weight */
+    border: none; /* No border */
+    border-radius: 30px; /* Pill shape button */
+    box-shadow: 0 4px 10px rgba(128, 0, 128, 0.5); /* Soft shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Pointer cursor */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+}
+
+.btn.btn2:hover {
+    background: linear-gradient(90deg, #ff00ff, #800080); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slightly grow the button */
+    box-shadow: 0 6px 15px rgba(128, 0, 128, 0.7); /* Enhanced shadow */
+}
+
+/*------contact section----*/
+#contact {
+    padding: 30px 0; /* Padding for contact section */
+    background-color: #424141; /* Dark gray background */
+    color: white; /* White text color */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 1300px; /* Maximum width */
+    margin: 0 auto; /* Center the section */
+    box-sizing: border-box; /* Box-sizing rule */
+}
+
+.typeofcontact {
+    display: grid; /* Grid display for contact types */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns */
+    grid-gap: 20px; /* Gap between items */
+    margin-top: 20px; /* Margin from the top */
+}
+
+.typeofcontact div {
+    background: #262626; /* Dark gray background */
+    padding: 40px; /* Padding inside the divs */
+    font-size: 13px; /* Font size */
+    font-weight: 300; /* Light font weight */
+    border-radius: 10px; /* Rounded corners */
+    transition: background 0.5s, transform 0.5s; /* Smooth transition for background and transform */
+}
+
+.typeofcontact h2 {
+    font-size: 24px; /* Font size for heading */
+    font-weight: 700; /* Bold weight */
+    margin-bottom: 10px; /* Margin below heading */
+}
+
+.typeofcontact p {
+    margin-top: 20px; /* Margin above paragraph */
+}
+
+.typeofcontact h2 i {
+    margin-bottom: 10px; /* Margin below icon */
+    color: #ff004f; /* Pink color for icon */
+    font-size: 20px; /* Font size for icon */
+}
+
+.typeofcontact a {
+    text-decoration: none; /* No underline on link */
+    color: white; /* White text color */
+    font-size: 14px; /* Font size */
+    margin-top: 10px; /* Margin above the link */
+    display: inline-block; /* Inline-block display */
+    font-weight: bold; /* Bold text */
+}
+
+.typeofcontact div:hover {
+    background: #8A00C4; /* Purple background on hover */
+    transform: translateY(-10px); /* Slightly lift the item */
+    text-decoration: underline; /* Underline text on hover */
+}
+
+.typeofcontact div p:hover {
+    text-decoration: underline; /* Underline paragraph on hover */
+}
+
+.contact-left {
+    flex-basis: 35%; /* 35% width for left contact section */
+}
+
+.contact-right {
+    flex-basis: 60%; /* 60% width for right contact section */
+}
+
+.contact-left p {
+    margin-top: 30px; /* Margin from top */
+}
+
+.contact-left p i {
+    color: #800080; /* Purple icon color */
+    margin-right: 15px; /* Margin to the right */
+    font-size: 25px; /* Larger icon size */
+}
+
+.social-icons {
+    margin-top: 30px; /* Margin from the top */
+}
+
+.social-icons a {
+    text-decoration: none; /* No underline on social links */
+    font-size: 30px; /* Larger font size for social icons */
+    margin-right: 15px; /* Margin to the right */
+    color: #ababab; /* Gray color for icons */
+    display: inline-block; /* Inline-block display */
+    transition: transform 0.5s; /* Smooth transition */
+}
+
+.social-icons a:hover {
+    color: #800080; /* Purple color on hover */
+    transform: translateY(-5px); /* Slightly lift the icon */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #262626; /* Dark gray background for footer */
+    color: white; /* White text color */
+    text-align: center; /* Center align text */
+    padding: 20px 10px; /* Padding for footer */
+    font-size: 14px; /* Font size */
+    margin-top: 30px; /* Margin from the top */
+}
+
+footer p {
+    margin: 0; /* Remove margin */
+    line-height: 1.5; /* Line height for text */
+}
+
+/* Social icon styles */
+.social-icons {
+    margin-top: 30px; /* Margin from top */
+}
+
+.social-icons a {
+    text-decoration: none; /* No underline on social links */
+    font-size: 30px; /* Font size for social icons */
+    margin-right: 15px; /* Margin to the right */
+    color: #ababab; /* Gray color */
+    display: inline-block; /* Inline-block display */
+    transition: transform 0.5s; /* Smooth transition */
+}
+
+.social-icons a:hover {
+    color: #800080; /* Purple color on hover */
+    transform: translateY(-5px); /* Slightly lift the icon */
+}
+
+/* Small screen adjustments */
+nav .fas {
+    display: none; /* Hide burger icon by default */
+}
+
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url(Images/phone-background.jpg); /* Change background for mobile */
+    }
+
+    .header-text {
+        margin-top: 100%; /* Adjust header margin for mobile */
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .header-text h1 {
+        font-size: 30px; /* Smaller font size for mobile */
+    }
+
+    nav .fas {
+        display: block; /* Show burger icon for mobile */
+        font-size: 25px; /* Adjust icon size */
+    }
+
+    nav ul {
+        background: #800080; /* Purple background for mobile nav */
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s; /* Smooth transition for sliding in */
+    }
+
+    nav ul li {
+        display: block; /* Stack nav items vertically */
+        margin: 25px;
+    }
+
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    .sub-title {
+        font-size: 40px; /* Smaller font size */
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%; /* Full width for columns on mobile */
+    }
+
+    .about-col-1 {
+        margin-bottom: 30px; /* Margin below first column */
+    }
+
+    .about-col-1 {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .tab-links {
+        font-size: 16px; /* Smaller tab link font size */
+        margin-right: 20px; /* Adjust margin */
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%; /* Full width for contact sections */
+    }
+
+    .copyright {
+        font-size: 14px; /* Smaller font size for copyright */
+    }
+}
+
+#msg {
+    color: #800080; /* Purple color for message */
+    margin-top: -40px; /* Margin above the message */
+    display: block; /* Show the message */
+}
